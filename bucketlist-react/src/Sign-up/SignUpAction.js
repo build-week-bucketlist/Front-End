@@ -10,7 +10,7 @@ export function signingUp (){
         dispatch({type : SIGNINGUP_START})
 
         return axios
-         .post (' https://bucket-list-webpt6.herokuapp.com/api/register')
+         .post ('https://bucket-list-webpt6.herokuapp.com/api/register')
          .then(res => {
              dispatch({type: SIGNINGUP_SUCCESS, payload: res.data})
          })

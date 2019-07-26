@@ -17,9 +17,10 @@ class SignUpForm extends Component {
      }
      signUp = e => {
          e.preventDefault();
-        this.props.signingUp(this.state)
+         const { username, password, email } = this.state
+        this.props.signingUp(username, password,email)
         .then(()=>{
-            this.props.register()
+            this.props.history.push('/')
         })
      }
     
