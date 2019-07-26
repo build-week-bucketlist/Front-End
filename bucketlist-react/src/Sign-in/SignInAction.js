@@ -16,7 +16,7 @@ export function login(username, password) {
         })
         .catch((err) => {
             const payload = err.response ? err.response.data : err
-            dispatcc({ type: LOGIN_FAILED, payload })
+            dispatch({ type: LOGIN_FAILED, payload })
         })
     }
 }

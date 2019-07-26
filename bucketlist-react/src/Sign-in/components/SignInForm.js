@@ -48,9 +48,11 @@ class Login extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
+    return{
     isLoading: state.isLoading,
     error: state.error 
+    }
 }
 
 const mapDispatchToProps = {
