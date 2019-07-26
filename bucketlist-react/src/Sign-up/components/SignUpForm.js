@@ -19,7 +19,7 @@ class SignUpForm extends Component {
          e.preventDefault();
         this.props.signingUp(this.state)
         .then(()=>{
-            this.props.history.push('/user')
+            this.props.register()
         })
      }
     
