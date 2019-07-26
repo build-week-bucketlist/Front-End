@@ -8,7 +8,6 @@ import { logger } from 'redux-logger';
 import combineReducers from './reducers/combineReducers'
 import App from './App';
 
-
 const store = createStore(combineReducers, applyMiddleware(thunk, logger))
 
 
