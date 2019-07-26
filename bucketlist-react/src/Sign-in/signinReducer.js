@@ -12,5 +12,3 @@ export const signinReducer = (state = initialState, action) => {
             return state;
     }
 }
-
-// export default signinReducer;
