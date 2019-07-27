@@ -6,7 +6,7 @@ class SignInForm extends React.Component {
     constructor() {
         super()
         this.state = {
-            username: '',
+            email: '',
             password: '',
         }
     }
@@ -18,10 +18,11 @@ class SignInForm extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
       
-
-        this.props.login(this.state.credentials)
+        const {email, password} = this.state
+        this.props.login(email,
+            password)
         .then(() => {
-            this.props.history.push("/bucketList")
+            this.props.history.push("/")
         })
         .catch((err) => {
             console.error(err)
@@ -29,14 +30,16 @@ class SignInForm extends React.Component {
     }
 
     render() {
-        const { username, password } = this.state
+        const { email, password } = this.state
         const { isLoading, error } = this.props
 
         return (
             <form onSubmit={this.handleSubmit}>
+
+                <input type="text" name="email" placeholder="email" value={email} onChange={this.handleChange} /><br />
+=======
                 {error && <p className="error">{error}</p>}
 
-                <input type="text" name="username" placeholder="Username" value={username} onChange={this.handleChange} /><br />
                 <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} /><br />
 
                 {isLoading 

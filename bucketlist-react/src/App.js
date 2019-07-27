@@ -22,8 +22,11 @@ function App() {
       </ul>
       
       <PrivateRoute exact path = '/bucketList' component = {BucketList} />
+
       <Route exact path = '/api/login' component = {SignInForm} />
       <Route exact path = '/api/register' component = {SignUpForm} />
+
+
     </div>
   );
 }
