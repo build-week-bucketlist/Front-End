@@ -14,17 +14,17 @@ function App() {
           <Link to = '/BucketList' />
         </li>
         <li>
-          <Link to = '/SignIn'> <SignInForm /> </Link>
+          <Link to = '/SignIn' />
         </li>
         <li>
-          <Link to = '/SignUp'>  </Link>
+          <Link to = '/SignUp' />
         </li>
       </ul>
       
       <PrivateRoute exact path = '/bucketList' component = {BucketList} />
 
-      <Route exact path = '/api/login' component = {SignInForm} />
-      <Route exact path = '/api/register' component = {SignUpForm} />
+      <Route exact path = '/signIn' component = {SignInForm} />
+      <Route exact path = '/signUp' component = {SignUpForm} />
 
 
     </div>
