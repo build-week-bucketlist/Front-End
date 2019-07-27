@@ -5,7 +5,7 @@ import {signingUp} from '../SignUpAction'
 
 class SignUpForm extends Component {
      state = {
-        username: '',
+        name: '',
         email: '',
         password: ''
      }
@@ -17,26 +17,27 @@ class SignUpForm extends Component {
      }
      signUp = e => {
          e.preventDefault();
-         const { username, password, email } = this.state
-        this.props.signingUp(username, password,email)
+         const { name, password, email } = this.state
+        this.props.signingUp( name, email, password )
         .then(()=>{
             this.props.history.push('/')
         })
      }
     
     render(){
+        
         return (
         <div className="col-md-6 col-md-offset-3">
             <form onSubmit = {this.signUp}>
                 <h2>Sign Up</h2>
 
                 <div className = 'form-group'>
-                <label className = 'control-label'>Username</label>
+                <label className = 'control-label'>name</label>
                 <input className = 'form-control'
                     type = 'text'
-                    placeholder = 'username'
-                    name = 'username'
-                    value = {this.state.username}
+                    placeholder = 'name'
+                    name = 'name'
+                    value = {this.state.name}
                     onChange = {this.handleChange}
                     />
                 </div>  
@@ -61,7 +62,7 @@ class SignUpForm extends Component {
                     />
                 </div>  
                 <button className = 'btn btn-primary btn-lg'
-                    type = 'button' >
+                    type = 'submit' >
                         SignUp
                 </button>
             </form>
