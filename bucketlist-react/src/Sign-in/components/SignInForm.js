@@ -2,7 +2,7 @@ import React from 'react';
 import { login } from '../SignInAction';
 import { connect } from 'react-redux';
 
-class Login extends React.Component {
+class SignInForm extends React.Component {
     constructor() {
         super()
         this.state = {
@@ -35,7 +35,11 @@ class Login extends React.Component {
 
         return (
             <form onSubmit={this.handleSubmit}>
+
                 <input type="text" name="email" placeholder="email" value={email} onChange={this.handleChange} /><br />
+=======
+                {error && <p className="error">{error}</p>}
+
                 <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} /><br />
 
                 {isLoading 
@@ -60,4 +64,4 @@ const mapDispatchToProps = {
 export default connect(
     mapStateToProps,
     mapDispatchToProps,
-)(Login);
+)(SignInForm);
