@@ -6,21 +6,23 @@ class SignInForm extends React.Component {
     constructor() {
         super()
         this.state = {
-            email: '',
+            username: '',
             password: '',
         }
     }
 
     handleChange = e => {
+        e.preventDefault()
+
         this.setState({ [e.target.name ]: e.target.value })
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
-      
-        const {email, password} = this.state
-        this.props.login(email,
-            password)
+
+        const { username, password } = this.state
+
+        this.props.login(username, password)
         .then(() => {
             this.props.history.push("/")
         })
@@ -30,17 +32,28 @@ class SignInForm extends React.Component {
     }
 
     render() {
-        const { email, password } = this.state
+        const { username, password } = this.state
         const { isLoading, error } = this.props
 
         return (
             <form onSubmit={this.handleSubmit}>
-
-                <input type="text" name="email" placeholder="email" value={email} onChange={this.handleChange} /><br />
-=======
                 {error && <p className="error">{error}</p>}
 
-                <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} /><br />
+                <input 
+                    type="text" 
+                    name="username" 
+                    placeholder="Username" 
+                    value={username} 
+                    onChange={this.handleChange} /><br 
+                    />
+
+                <input 
+                    type="password" 
+                    name="password" 
+                    placeholder="Password" 
+                    value={password} 
+                    onChange={this.handleChange} /><br 
+                    />
 
                 {isLoading 
                     ? <p>Logging in...</p>
