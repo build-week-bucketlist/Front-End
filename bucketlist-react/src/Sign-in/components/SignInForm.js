@@ -24,7 +24,7 @@ class SignInForm extends React.Component {
 
         this.props.login(username, password)
         .then(() => {
-            this.props.history.push("/")
+            this.props.history.push("/bucketList")
         })
         .catch((err) => {
             console.error(err)

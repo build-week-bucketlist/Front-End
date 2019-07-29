@@ -20,7 +20,7 @@ class SignUpForm extends Component {
          const { name, password, email } = this.state
         this.props.signingUp( name, email, password )
         .then(()=>{
-            this.props.history.push('/')
+            this.props.history.push('/signIn')
         })
      }
     
