@@ -29,7 +29,7 @@ export function fetchingCurrentUser(id){
         dispatch({type:GET_USER_START})
 
        return axiosWithAuth()
-        .get(`https://bucket-list-webpt6.herokuapp.com/api/user`)
+        .get('https://bucket-list-webpt6.herokuapp.com/api/user')
         .then(res=> {
             dispatch({type: GET_USER_SUCCESS, payload: res.data})
             console.log(res.data)
@@ -47,7 +47,7 @@ export function gettingItems(user_id){
         dispatch({type:FETCHING_ITEMS_START})
 
        return axiosWithAuth()
-        .get(`https://bucket-list-webpt6.herokuapp.com/api/user/${user_id}/items`)
+        .get('https://bucket-list-webpt6.herokuapp.com/api/user/1/items')
         .then(res=> {
             dispatch({type: FETCHING_ITEMS_SUCCESS, payload: res.data})
             console.log(res.data)
