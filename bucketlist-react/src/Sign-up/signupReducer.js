@@ -5,7 +5,7 @@ import {
 } from './SignUpAction'
 
 const initialState = {
-    todo:[],
+
     signingUp: false,
     signingIn: false,
     fetchingList:false,

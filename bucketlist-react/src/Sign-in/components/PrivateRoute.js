@@ -9,7 +9,7 @@ export default function(props) {
       render={() => {
         const token = localStorage.getItem('token');
 
-        return token ? <Component /> : <Redirect to='/login' />;
+        return token ? <Component /> : <Redirect to='/signIn' />;
       }}
     />
   );

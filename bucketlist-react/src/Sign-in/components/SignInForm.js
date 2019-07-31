@@ -13,13 +13,11 @@ class SignInForm extends React.Component {
 
     handleChange = e => {
         e.preventDefault()
-
         this.setState({ [e.target.name ]: e.target.value })
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
-
         const { username, password } = this.state
 
         this.props.login(username, password)
