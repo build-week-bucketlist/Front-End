@@ -60,7 +60,7 @@ class BucketListForm extends React.Component{
 }
 
 const mapStateToProps = state => {
-    console.log('this is from mapstateprops',state)
+    console.log('BucketListForm mapStateToProps ',state)
     return {
         completed:state.bucketlistReducer.completed,
         description:state.bucketlistReducer.description,
@@ -71,4 +71,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {addTodo, fetchingCurrentUser})(BucketListForm);
+export default connect(mapStateToProps, {addTodo,fetchingCurrentUser })(BucketListForm);
