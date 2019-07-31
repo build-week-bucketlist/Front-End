@@ -47,7 +47,7 @@ export function gettingItems(user_id){
         dispatch({type:FETCHING_ITEMS_START})
 
        return axiosWithAuth()
-        .get(`https://bucket-list-webpt6.herokuapp.com/api/user/1/items`)
+        .get(`https://bucket-list-webpt6.herokuapp.com/api/user/${user_id}/items`)
         .then(res=> {
             dispatch({type: FETCHING_ITEMS_SUCCESS, payload: res.data})
             console.log(res.data)
