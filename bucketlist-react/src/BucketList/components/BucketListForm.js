@@ -1,41 +1,54 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {addTodo} from '../BucketListActions'
+import {addTodo, fetchingCurrentUser} from '../BucketListActions'
 
-class BucketList extends React.Component{
+class BucketListForm extends React.Component{
     state = {
+        
         description: '',
         completed: false,
-        user_id : Number
+      
+      
+    }
+    componentDidMount(){
+        this.props.fetchingCurrentUser();
     }
 
-
     handleChange = e => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
+        this.setState({[e.target.name]: e.target.value}) 
+      
     }
 
     addToList = e => {
+       e.preventDefault(); 
+       
+       const {description, completed} = this.state;
+       const newBucketlist = {
+           description, completed, user_id : this.props.user.id
+       }
+       this.props.addTodo(newBucketlist)
         
-        const {description} = this.state;
-    this.props.addTodo(description)
-    this.setState({description: ''})
-    this.props.history.push("/bucketList")
-    }
+      
+   }
+    
     render(){
         
         return (
             <div className="form-group row">
                <div className="col-sm-10">
                 <h1>BucketList</h1>
+                <div>
+                    {}
+                </div>
                 <form onSubmit = {this.addToList}>
                     <input className = 'form-control'
                         type = 'text'
                         name = 'description'
+                        placeholder = 'description'
                         value = {this.state.description}
                         onChange = {this.handleChange} />
-                   
+
+               
                     <button className = 'btn btn-primary btn-md'
                     type = 'submit'>Add BucketList</button>
                 </form>
@@ -47,9 +60,15 @@ class BucketList extends React.Component{
 }
 
 const mapStateToProps = state => {
+    console.log('this is from mapstateprops',state)
     return {
-        item: state.item
+        completed:state.bucketlistReducer.completed,
+        description:state.bucketlistReducer.description,
+        user_id:state.bucketlistReducer.user_id,
+        addingItem:state.bucketlistReducer.addingItem,
+        error:state.bucketlistReducer.error,
+        user: state.bucketlistReducer.user
     }
 }
 
-export default connect(mapStateToProps, {addTodo})(BucketList);
+export default connect(mapStateToProps, {addTodo, fetchingCurrentUser})(BucketListForm);

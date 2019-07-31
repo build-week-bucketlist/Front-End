@@ -5,7 +5,7 @@ import {
 } from './SignInAction'
 
 const initialState = {
-    todo:[],
+  
     isLoading: false,
     fetchingList:false,
     error:null
