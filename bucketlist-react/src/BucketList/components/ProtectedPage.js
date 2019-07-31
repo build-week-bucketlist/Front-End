@@ -2,17 +2,18 @@ import React from 'react';
 import {connect} from 'react-redux';
 // import {withRouter} from 'react-router-dom';
 import BucketListForm from '../components/BucketListForm'
-import {gettingItems} from '../BucketListActions'
+import {gettingItems,fetchingCurrentUser} from '../BucketListActions'
 import BucketList from '../components/BuckletList'
  
 class ProtectedPage extends React.Component{
 
     componentDidMount(){
-        this.props.gettingItems();
+        console.log('The componentDiDmount',this.props)
+        this.props.gettingItems(this.props.user.id);
     }
 
     render(){
-        console.log('ProtectedPage props', this.props)
+        console.log('ProtectedPage render props', this.props)
         return(
             <div>
                 {this.props.fetchingItems ? (
@@ -27,11 +28,12 @@ class ProtectedPage extends React.Component{
 }
 
 const mapStateToProps = state => {
-    console.log('This item Prop Is in the Protected Page', state )
+    console.log('ProtectPage mapStateToProps', state.bucketlistReducer.user.id )
     return {
         items: state.bucketlistReducer.items,
-        fetchingItems: state.fetchingItems
+        fetchingItems: state.fetchingItems,
+        user: state.bucketlistReducer.user
     }
 }
 
-export default connect(mapStateToProps, {gettingItems})(ProtectedPage);
+export default connect(mapStateToProps, {gettingItems,fetchingCurrentUser})(ProtectedPage);

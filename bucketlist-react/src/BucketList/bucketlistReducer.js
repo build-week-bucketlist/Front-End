@@ -39,7 +39,7 @@ const initialState = {
         case ADD_TODO_FAILURE:
             return {
                 ...state,
-                error: 'we have a error' 
+                error: action.payload
             }
         case GET_USER_START:
             return {
@@ -55,23 +55,25 @@ const initialState = {
         case GET_USER_FAILURE:
             return {
                 ...state,
-                error: 'we have a error'
+                error: action.payload
             }
         case FETCHING_ITEMS_START:
             return {
                 ...state,
-                fetchingItems: true
+                fetchingItems: true,
+                
             }
         case FETCHING_ITEMS_SUCCESS:
             return {
                 ...state,
                 fetchingItems: true,
-                items: action.payload.items
+                items: action.payload.items,
+                
             }
         case FETCHING_ITEMS_FAILED:
             return {
                 ...state,
-                error: 'we have a error'
+                error: action.payload
             }
         
         default:

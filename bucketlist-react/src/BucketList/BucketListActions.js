@@ -23,8 +23,8 @@ export const GET_USER_FAILURE = 'GET_USER_FAILURE';
 // export const SHOW_ACTIVE = 'SHOW_ACTIVE';
 // export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 
-export function fetchingCurrentUser(id){
-    console.log('fetching data in the action')
+export function fetchingCurrentUser(){
+    console.log('The fetchingCurrentUser function')
     return dispatch => {
         dispatch({type:GET_USER_START})
 
@@ -32,7 +32,7 @@ export function fetchingCurrentUser(id){
         .get('https://bucket-list-webpt6.herokuapp.com/api/user')
         .then(res=> {
             dispatch({type: GET_USER_SUCCESS, payload: res.data})
-            console.log(res.data)
+            console.log('fetchingCurrentUser',res.data)
         })
         .catch(err => {
             dispatch({type: GET_USER_FAILURE, payload: err})
@@ -41,16 +41,16 @@ export function fetchingCurrentUser(id){
     }
 }
 
-export function gettingItems(user_id){
-    console.log('gettingItems in the action')
+export function gettingItems(id){
+    console.log('The gettingItems function (id) param', id)
     return dispatch => {
         dispatch({type:FETCHING_ITEMS_START})
 
        return axiosWithAuth()
-        .get('https://bucket-list-webpt6.herokuapp.com/api/user/1/items')
+        .get(`https://bucket-list-webpt6.herokuapp.com/api/user/${id}/items`)
         .then(res=> {
             dispatch({type: FETCHING_ITEMS_SUCCESS, payload: res.data})
-            console.log(res.data)
+            console.log('gettingItems',res.data)
         })
         .catch(err => {
             dispatch({type: FETCHING_ITEMS_FAILED, payload: err})
@@ -60,7 +60,7 @@ export function gettingItems(user_id){
 }
 
 export function addTodo(item){
-    console.log("FROM THE ACTION @#$",item)
+    console.log("The addTodo function (item) param",item)
     return dispatch => {
         dispatch({type:ADD_TODO_START})
         
@@ -70,7 +70,7 @@ export function addTodo(item){
         )
         .then(res=> {
             dispatch({type: ADD_TODO_SUCCESS, payload: res.data})
-            console.log(res.data)
+            console.log('addTodo',res.data)
         })
         .catch(err => {
             dispatch({type: ADD_TODO_FAILURE, payload: err})
