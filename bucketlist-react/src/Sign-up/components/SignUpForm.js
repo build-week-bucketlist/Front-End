@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {signingUp} from '../SignUpAction'
+import {Row, Col} from 'react-bootstrap'
 
 
 class SignUpForm extends Component {
@@ -27,12 +28,15 @@ class SignUpForm extends Component {
     render(){
         
         return (
-        <div className="col-md-6 col-md-offset-3">
+       
+              
+                <Row>
+                    <Col md={{ span: 4, offset: 4 }}>
             <form onSubmit = {this.signUp}>
-                <h2>Sign Up</h2>
-
+                <h1>Sign Up</h1>
+              
                 <div className = 'form-group'>
-                <label className = 'control-label'>name</label>
+                {/* <label className = 'control-label'>name</label> */}
                 <input className = 'form-control'
                     type = 'text'
                     placeholder = 'name'
@@ -42,7 +46,7 @@ class SignUpForm extends Component {
                     />
                 </div>  
                 <div className = 'form-group'>
-                <label className = 'control-label'>Email</label>
+                {/* <label className = 'control-label'>Email</label> */}
                 <input className = 'form-control'
                     type = 'text'
                     placeholder = 'email'
@@ -52,7 +56,7 @@ class SignUpForm extends Component {
                     />
                 </div>  
                 <div className = 'form-group'>
-                <label className = 'control-label'>Password</label>
+                {/* <label className = 'control-label'>Password</label> */}
                 <input className = 'form-control'
                     type = 'password'
                     placeholder = 'password'
@@ -66,7 +70,9 @@ class SignUpForm extends Component {
                         SignUp
                 </button>
             </form>
-            </div> 
+            </Col>
+            </Row>
+           
         )
     }
 }

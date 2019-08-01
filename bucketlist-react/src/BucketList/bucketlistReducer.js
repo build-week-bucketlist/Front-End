@@ -34,7 +34,7 @@ const initialState = {
             return {
                 ...state,
                 description: action.payload,
-                user_id: action.payload   
+                user_id: action.payload
             }
         case ADD_TODO_FAILURE:
             return {
@@ -68,7 +68,7 @@ const initialState = {
                 ...state,
                 fetchingItems: true,
                 items: action.payload.items,
-                
+               
             }
         case FETCHING_ITEMS_FAILED:
             return {
