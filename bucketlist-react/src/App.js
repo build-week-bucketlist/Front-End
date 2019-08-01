@@ -8,18 +8,18 @@ import PrivateRoute from './Sign-in/components/PrivateRoute';
 
 function App() {
   return (
-    <div className="App">
-      <ul>
-        <li>
-          <Link to = '/BucketList' >BucketList</Link>
-        </li>
-        <li>
-          <Link to = '/SignIn' >SignIn</Link>
-        </li>
-        <li>
-          <Link to = '/SignUp' >SignUp</Link>
-        </li>
-      </ul>
+    <div>
+      <nav>
+        <span>
+          <Link to = '/BucketList' >Bucket List</Link>
+        </span>
+        <span>
+          <Link to = '/SignIn' >Sign In</Link>
+        </span>
+        <span>
+          <Link to = '/SignUp' >Sign Up</Link>
+        </span>
+      </nav>
       
       <PrivateRoute exact path = '/bucketList' component = {ProtectedPage} />
 

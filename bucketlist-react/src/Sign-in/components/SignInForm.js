@@ -1,6 +1,7 @@
 import React from 'react';
 import { login } from '../SignInAction';
 import { connect } from 'react-redux';
+import Form from 'react-bootstrap/Form';
 
 class SignInForm extends React.Component {
     constructor() {
@@ -34,29 +35,32 @@ class SignInForm extends React.Component {
         const { isLoading, error } = this.props
 
         return (
-            <form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit}>
                 {error && <p className="error">{error}</p>}
 
-                <input 
-                    type="text" 
-                    name="username" 
-                    placeholder="Username" 
-                    value={username} 
-                    onChange={this.handleChange} /><br 
-                    />
+                <h2>Login</h2>
 
-                <input 
+                    <label className="username">Username</label>
+                    <input className="formUser"
+                        type="email" 
+                        name="username" 
+                        // placeholder="Username" 
+                        value={username} 
+                        onChange={this.handleChange} />
+                    
+
+                <label className="password">Password</label>
+                <input className="formPass"
                     type="password" 
                     name="password" 
-                    placeholder="Password" 
+                    // placeholder="Password" 
                     value={password} 
-                    onChange={this.handleChange} /><br 
-                    />
+                    onChange={this.handleChange} />
 
                 {isLoading 
                     ? <p>Logging in...</p>
-                    : <button type="submit">Login</button>}
-            </form>
+                    : <button className="loginButton" type="submit">Login</button> }
+            </Form>
         )
     }
 }
