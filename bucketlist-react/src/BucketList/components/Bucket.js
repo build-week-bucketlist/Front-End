@@ -1,13 +1,25 @@
 import React from 'react';
+// import { Icon } from 'semantic-ui-react'
 
 const Bucket = props => {
     return (
-        <li>
-            description: {props.item.description}
-            completed: {props.item.completed}
-            created: {props.item.created}
-        </li>
+        <div className="form-group row">
+        <div className="col-md-4">
+
+                </div>
+        <div className="col-md-4">
+        <ul class="list-group">
+        <i class = 'delete'> </i><li class="list-group-item list-group-item-action">{props.item.description}</li>
+      
+         </ul>
+        </div>
+        <div className="col-md-4">
+
+        </div>
+    </div>
+
     )
 }
 
 export default Bucket;
+

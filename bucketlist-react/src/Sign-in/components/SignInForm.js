@@ -1,7 +1,6 @@
 import React from 'react';
 import { login } from '../SignInAction';
 import { connect } from 'react-redux';
-import Form from 'react-bootstrap/Form';
 
 class SignInForm extends React.Component {
     constructor() {
@@ -35,7 +34,7 @@ class SignInForm extends React.Component {
         const { isLoading, error } = this.props
 
         return (
-            <Form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
                 {error && <p className="error">{error}</p>}
 
                 <h2>Login</h2>
@@ -60,7 +59,7 @@ class SignInForm extends React.Component {
                 {isLoading 
                     ? <p>Logging in...</p>
                     : <button className="loginButton" type="submit">Login</button> }
-            </Form>
+            </form>
         )
     }
 }
