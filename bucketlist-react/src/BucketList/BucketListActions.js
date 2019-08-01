@@ -53,7 +53,7 @@ export function gettingItems(id){
             console.log('gettingItems',res.data)
         })
         .catch(err => {
-            dispatch({type: FETCHING_ITEMS_FAILED, payload: err})
+            dispatch({type: FETCHING_ITEMS_FAILED, payload: err.message})
             console.log(err)
         }) 
     }

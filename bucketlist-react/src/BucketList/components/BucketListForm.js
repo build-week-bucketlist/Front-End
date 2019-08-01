@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import {addTodo, fetchingCurrentUser} from '../BucketListActions'
+import {Row, Col} from 'react-bootstrap'
 
 class BucketListForm extends React.Component{
     state = {
@@ -32,35 +33,34 @@ class BucketListForm extends React.Component{
    }
     
     render(){
-        
         return (
-            <div className="form-group row">
-               <div className="col-sm-10">
+        <div>
+        <Row>
+            <Col md={{ span: 4, offset: 4 }}>
                 <h1>BucketList</h1>
-                <div>
-                    {}
-                </div>
-                <form onSubmit = {this.addToList}>
+                <form   onSubmit = {this.addToList}>
+                    <div className = 'form-group'>
                     <input className = 'form-control'
                         type = 'text'
                         name = 'description'
                         placeholder = 'description'
                         value = {this.state.description}
                         onChange = {this.handleChange} />
-
-               
-                    <button className = 'btn btn-primary btn-md'
-                    type = 'submit'>Add BucketList</button>
+                    </div>
+                       <button className = 'btn btn-primary btn-md ml-md-auto active'
+                    type = 'submit' >Add BucketList</button>
                 </form>
-               </div>
-            </div>
+               
+              </Col>
+        </Row>
+        </div>
         )
     }
 
 }
 
 const mapStateToProps = state => {
-    console.log('BucketListForm mapStateToProps ',state)
+    console.log('BucketListFormmapStateToProps ',state)
     return {
         completed:state.bucketlistReducer.completed,
         description:state.bucketlistReducer.description,

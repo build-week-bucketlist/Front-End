@@ -1,6 +1,7 @@
 import React from 'react';
 import { login } from '../SignInAction';
 import { connect } from 'react-redux';
+import {Row, Col} from 'react-bootstrap'
 
 class SignInForm extends React.Component {
     constructor() {
@@ -34,29 +35,39 @@ class SignInForm extends React.Component {
         const { isLoading, error } = this.props
 
         return (
+            <div>
+                
+            <Row>
+            <Col md={{ span: 4, offset: 4 }}>
+            <h1>Login</h1>
             <form onSubmit={this.handleSubmit}>
                 {error && <p className="error">{error}</p>}
-
-                <input 
+                <div className = 'form-group'>
+                <input className = 'form-control'
                     type="text" 
                     name="username" 
                     placeholder="Username" 
                     value={username} 
                     onChange={this.handleChange} /><br 
                     />
-
-                <input 
+                  </div> 
+                  <div className = 'form-group'>
+                <input className = 'form-control'
                     type="password" 
                     name="password" 
                     placeholder="Password" 
                     value={password} 
                     onChange={this.handleChange} /><br 
                     />
-
+                 </div>    
                 {isLoading 
                     ? <p>Logging in...</p>
-                    : <button type="submit">Login</button>}
+                    : <button className = 'btn btn-primary btn-lg'
+                    type="submit">Login</button>}
             </form>
+            </Col>
+        </Row>
+        </div>
         )
     }
 }
