@@ -6,12 +6,14 @@ const Bucket = props => {
         <div className="form-group row">
         <div className="col-md-4">
 
-                </div>
+        </div>
+        
         <div className="col-md-4">
+           
         <ul class="list-group">
-        <i class = 'delete'> </i><li class="list-group-item list-group-item-action">{props.item.description}</li>
-      
-         </ul>
+          
+            <li class="list-group-item list-group-item-action">{props.item.description}</li>
+        </ul>
         </div>
         <div className="col-md-4">
 

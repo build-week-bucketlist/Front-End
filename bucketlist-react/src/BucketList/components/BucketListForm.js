@@ -47,7 +47,7 @@ class BucketListForm extends React.Component{
                         value = {this.state.description}
                         onChange = {this.handleChange} />
                     </div>
-                       <button className = 'btn btn-primary btn-md ml-md-auto active'
+                       <button className = 'btn btn-primary btn-md '
                     type = 'submit' >Add BucketList</button>
                 </form>
                

@@ -8,8 +8,8 @@ import BucketList from '../components/BuckletList'
 class ProtectedPage extends React.Component{
 
     componentDidMount(){
-        console.log('The componentDiDmount',this.props)
-        this.props.gettingItems(this.props.user.id);
+        console.log('The componentDiDmount',this.props.user.id)
+        this.props.gettingItems(1);
     }
 
     render(){
