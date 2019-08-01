@@ -1,7 +1,6 @@
 import React from 'react';
 import { login } from '../SignInAction';
 import { connect } from 'react-redux';
-import {Row, Col} from 'react-bootstrap'
 
 class SignInForm extends React.Component {
     constructor() {
@@ -35,39 +34,32 @@ class SignInForm extends React.Component {
         const { isLoading, error } = this.props
 
         return (
-            <div>
-                
-            <Row>
-            <Col md={{ span: 4, offset: 4 }}>
-            <h1>Login</h1>
             <form onSubmit={this.handleSubmit}>
                 {error && <p className="error">{error}</p>}
-                <div className = 'form-group'>
-                <input className = 'form-control'
-                    type="text" 
-                    name="username" 
-                    placeholder="Username" 
-                    value={username} 
-                    onChange={this.handleChange} /><br 
-                    />
-                  </div> 
-                  <div className = 'form-group'>
-                <input className = 'form-control'
+
+                <h2>Login</h2>
+
+                    <label className="username">Username</label>
+                    <input className="formUser"
+                        type="email" 
+                        name="username" 
+                        // placeholder="Username" 
+                        value={username} 
+                        onChange={this.handleChange} />
+                    
+
+                <label className="password">Password</label>
+                <input className="formPass"
                     type="password" 
                     name="password" 
-                    placeholder="Password" 
+                    // placeholder="Password" 
                     value={password} 
-                    onChange={this.handleChange} /><br 
-                    />
-                 </div>    
+                    onChange={this.handleChange} />
+
                 {isLoading 
                     ? <p>Logging in...</p>
-                    : <button className = 'btn btn-primary btn-lg'
-                    type="submit">Login</button>}
+                    : <button className="loginButton" type="submit">Login</button> }
             </form>
-            </Col>
-        </Row>
-        </div>
         )
     }
 }

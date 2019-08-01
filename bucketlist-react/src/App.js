@@ -5,32 +5,21 @@ import SignInForm from './Sign-in/components/SignInForm'
 import ProtectedPage from './BucketList/components/ProtectedPage';
 import SignUpForm from './Sign-up/components/SignUpForm'
 import PrivateRoute from './Sign-in/components/PrivateRoute';
-import {Navbar,Nav} from 'react-bootstrap'
 
 function App() {
   return (
-    <div className="App">
-      <Navbar   bg="primary" variant="dark">
-      <Navbar.Brand href="#home">LOGO</Navbar.Brand>
-
-      <Nav className="col-md-4 mr-auto">
-      
-          <Nav.Link href="BucketList"  >
-            BucketList
-          </Nav.Link>
-        
-      
-          <Nav.Link href = '/SignIn' >
-         SignIn
-          </Nav.Link>
-        
-      
-          <Nav.Link href = '/SignUp' >
-          SignUp
-          </Nav.Link>
-          </Nav>
-      
-      </Navbar>
+    <div>
+      <nav>
+        <span>
+          <Link to = '/BucketList' >Bucket List</Link>
+        </span>
+        <span>
+          <Link to = '/SignIn' >Sign In</Link>
+        </span>
+        <span>
+          <Link to = '/SignUp' >Sign Up</Link>
+        </span>
+      </nav>
       
       <PrivateRoute exact path = '/bucketList' component = {ProtectedPage} />
 
