@@ -41,7 +41,7 @@ class SignInForm extends React.Component {
 
                     <label className="username">Username</label>
                     <input className="formUser"
-                        type="email" 
+                        type="name" 
                         name="username" 
                         // placeholder="Username" 
                         value={username} 

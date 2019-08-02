@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 // import {withRouter} from 'react-router-dom';
 import BucketListForm from '../components/BucketListForm'
 import {gettingItems,fetchingCurrentUser} from '../BucketListActions'
-import BucketList from '../components/BuckletList'
+import BucketList from './BucketList'
  
 class ProtectedPage extends React.Component{
 

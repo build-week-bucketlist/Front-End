@@ -10,9 +10,9 @@ const Bucket = props => {
         
         <div className="col-md-4">
            
-        <ul class="list-group">
+        <ul className="list-group">
           
-            <li class="list-group-item list-group-item-action">{props.item.description}</li>
+            <li className="list-group-item list-group-item-action">{props.item.description}</li>
         </ul>
         </div>
         <div className="col-md-4">
