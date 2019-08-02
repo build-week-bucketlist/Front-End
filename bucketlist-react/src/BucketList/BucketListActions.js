@@ -24,13 +24,14 @@ export const GET_USER_FAILURE = 'GET_USER_FAILURE';
 // export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 
 export function fetchingCurrentUser(){
-    console.log('The fetchingCurrentUser function')
+    // console.log('The fetchingCurrentUser function')
     return dispatch => {
         dispatch({type:GET_USER_START})
 
        return axiosWithAuth()
         .get('https://bucket-list-webpt6.herokuapp.com/api/user')
         .then(res=> {
+            localStorage.setItem('id', res.data.user.id)
             dispatch({type: GET_USER_SUCCESS, payload: res.data})
             console.log('fetchingCurrentUser',res.data)
         })

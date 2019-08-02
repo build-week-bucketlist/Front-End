@@ -28,6 +28,7 @@ class BucketListForm extends React.Component{
            description, completed, user_id : this.props.user.id
        }
        this.props.addTodo(newBucketlist)
+       
         
       
    }
