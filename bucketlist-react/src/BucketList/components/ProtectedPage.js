@@ -1,15 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
 // import {withRouter} from 'react-router-dom';
-import BucketListForm from '../components/BucketListForm'
+
 import {gettingItems,fetchingCurrentUser} from '../BucketListActions'
 import BucketList from './BucketList'
  
 class ProtectedPage extends React.Component{
-
+    constructor(props){
+        super(props);
+    }
     componentDidMount(){
-        console.log('The componentDiDmount',this.props.user.id)
-        this.props.gettingItems(1);
+        console.log('The componentDiDmount',localStorage.getItem('id'))
+        this.props.gettingItems(localStorage.getItem('id'));
     }
 
     render(){
@@ -21,7 +23,7 @@ class ProtectedPage extends React.Component{
                 ) : ( 
                 <BucketList items = {this.props.items} />
                 )}
-                <BucketListForm />
+             
             </div>  
         )
     }

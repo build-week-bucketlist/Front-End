@@ -13,6 +13,7 @@ export function login(email, password) {
         .then((res) => {
             localStorage.setItem('token', res.data.token)
             dispatch({ type: LOGIN_SUCCESS })
+            console.log('RES DAATA', res)
         })
         .catch((err) => {
             const payload = err.response ? err.response.data : err
