@@ -16,6 +16,7 @@ class SignUpForm extends Component {
              [e.target.name]: e.target.value
          })
      }
+
      signUp = e => {
          e.preventDefault();
          const { name, password, email } = this.state
@@ -25,54 +26,47 @@ class SignUpForm extends Component {
         })
      }
     
-    render(){
-        
+    render() {
         return (
-       
-              
-                <Row>
-                    <Col md={{ span: 4, offset: 4 }}>
-            <form onSubmit = {this.signUp}>
+            <Row>
+                <Col md={{ span: 4, offset: 4 }}>
+                <form onSubmit={this.signUp}>
                 <h1>Sign Up</h1>
               
-                <div className = 'form-group'>
-                {/* <label className = 'control-label'>name</label> */}
-                <input className = 'form-control'
-                    type = 'text'
-                    placeholder = 'name'
-                    name = 'name'
-                    value = {this.state.name}
-                    onChange = {this.handleChange}
-                    />
+                <div className='form-group'>
+                    {/* <label className = 'control-label'>name</label> */}
+                <input className='form-control'
+                    type='text'
+                    placeholder='Name'
+                    name='name'
+                    value={this.state.name}
+                    onChange={this.handleChange}
+                />
                 </div>  
-                <div className = 'form-group'>
-                {/* <label className = 'control-label'>Email</label> */}
-                <input className = 'form-control'
-                    type = 'text'
-                    placeholder = 'email'
-                    name = 'email'
-                    value = {this.state.email}
-                    onChange = {this.handleChange}
-                    />
+                <div className='form-group'>
+                     {/* <label className = 'control-label'>Email</label> */}
+                <input className='form-control'
+                    type='text'
+                    placeholder='Email'
+                    name='email'
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                />
                 </div>  
-                <div className = 'form-group'>
-                {/* <label className = 'control-label'>Password</label> */}
-                <input className = 'form-control'
-                    type = 'password'
-                    placeholder = 'password'
-                    name = 'password'
-                    value = {this.state.password}
-                    onChange = {this.handleChange}
-                    />
+                <div className='form-group'>
+                    {/* <label className = 'control-label'>Password</label> */}
+                <input className='form-control'
+                    type='password'
+                    placeholder='Password'
+                    name='password'
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                />
                 </div>  
-                <button className = 'btn btn-primary btn-lg'
-                    type = 'submit' >
-                        SignUp
-                </button>
-            </form>
-            </Col>
+                 <button className='btn btn-primary btn-lg' type='submit'>Sign Up</button>
+                </form>
+                </Col>
             </Row>
-           
         )
     }
 }

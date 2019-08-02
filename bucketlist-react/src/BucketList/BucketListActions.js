@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import axiosWithAuth from '../Sign-in/components/axiosWithAuth'
 
 export const FETCHING_ITEMS_START = 'FETCHING_ITEMS_START'

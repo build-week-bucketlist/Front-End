@@ -22,18 +22,17 @@ export const signupReducer = (state = initialState, action) => {
             }
         case SIGNINGUP_SUCCESS:
             return{
-                    ...state,
-                    signingUp: true,
-                    error: null
-                }
+                ...state,
+                signingUp: true,
+                error: null
+            }
         case SIGNINGUP_FAILED:
-                return{
-                    ...state,
-                    signingUp: false,
-                    error: action.payload
-                }
+            return{
+                ...state,
+                signingUp: false,
+                error: action.payload
+            }
         default:
             return state;
     }
 }
-

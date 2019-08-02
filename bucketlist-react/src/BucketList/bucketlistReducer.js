@@ -61,21 +61,18 @@ const initialState = {
             return {
                 ...state,
                 fetchingItems: true,
-                
             }
         case FETCHING_ITEMS_SUCCESS:
             return {
                 ...state,
                 fetchingItems: true,
                 items: action.payload.items,
-               
             }
         case FETCHING_ITEMS_FAILED:
             return {
                 ...state,
                 error: action.payload
             }
-        
         default:
             return state;
     }

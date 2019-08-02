@@ -4,19 +4,17 @@ import {addTodo, fetchingCurrentUser} from '../BucketListActions'
 
 class BucketListForm extends React.Component{
     state = {
-        
         description: '',
         completed: false,
-      
-      
     }
+
     componentDidMount(){
         this.props.fetchingCurrentUser();
     }
 
     handleChange = e => {
+        e.preventDefault();
         this.setState({[e.target.name]: e.target.value}) 
-      
     }
 
     addToList = e => {
@@ -27,37 +25,31 @@ class BucketListForm extends React.Component{
            description, completed, user_id : this.props.user.id
        }
        this.props.addTodo(newBucketlist)
-       
-        
       
    }
     
-    render(){
-        
+    render() {
         return (
             <div className="form-group row">
-               <div className="col-sm-10">
-                <h1>BucketList</h1>
+                <div className="col-sm-10">
+                    <h1>Bucket List</h1>
                 <div>
                     {}
                 </div>
-                <form onSubmit = {this.addToList}>
-                    <input className = 'form-control'
-                        type = 'text'
-                        name = 'description'
-                        placeholder = 'description'
-                        value = {this.state.description}
-                        onChange = {this.handleChange} />
-
-               
-                    <button className = 'btn btn-primary btn-md'
-                    type = 'submit'>Add Bucket List</button>
-                </form>
-               </div>
+            <form onSubmit = {this.addToList}>
+                <input className = 'form-control'
+                    type = 'text'
+                    name = 'description'
+                    placeholder = 'Description'
+                    value = {this.state.description}
+                    onChange = {this.handleChange} />
+            <button className = 'btn btn-primary btn-md'
+                type = 'submit'>Add Bucket List</button>
+            </form>
+                </div>
             </div>
         )
     }
-
 }
 
 const mapStateToProps = state => {
