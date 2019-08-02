@@ -7,13 +7,13 @@ class BucketList extends React.Component{
     render(){
         // console.log('THIS is PROPs from BUCKETLIST', this.props)
         return(
-            <div>
-                <h1>Knock of your BucketList one at a time</h1>
+            <div className='bucketList'>
+                   <BucketListForm />
+                <h1>Knock off your Bucket List one at a time</h1>
                 {
                     this.props.items.map(item => {
                     return <Bucket key = {item.id}  item = {item} />
                 }) }
-                   <BucketListForm />
             </div>
         )
     }

@@ -39,7 +39,7 @@ class SignUpForm extends Component {
                 {/* <label className = 'control-label'>name</label> */}
                 <input className = 'form-control'
                     type = 'text'
-                    placeholder = 'name'
+                    placeholder = 'Name'
                     name = 'name'
                     value = {this.state.name}
                     onChange = {this.handleChange}
@@ -49,7 +49,7 @@ class SignUpForm extends Component {
                 {/* <label className = 'control-label'>Email</label> */}
                 <input className = 'form-control'
                     type = 'text'
-                    placeholder = 'email'
+                    placeholder = 'Email'
                     name = 'email'
                     value = {this.state.email}
                     onChange = {this.handleChange}
@@ -59,7 +59,7 @@ class SignUpForm extends Component {
                 {/* <label className = 'control-label'>Password</label> */}
                 <input className = 'form-control'
                     type = 'password'
-                    placeholder = 'password'
+                    placeholder = 'Password'
                     name = 'password'
                     value = {this.state.password}
                     onChange = {this.handleChange}
@@ -67,7 +67,7 @@ class SignUpForm extends Component {
                 </div>  
                 <button className = 'btn btn-primary btn-lg'
                     type = 'submit' >
-                        SignUp
+                        Sign Up
                 </button>
             </form>
             </Col>

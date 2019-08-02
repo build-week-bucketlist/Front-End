@@ -15,6 +15,7 @@ class BucketListForm extends React.Component{
     }
 
     handleChange = e => {
+        e.preventDefault();
         this.setState({[e.target.name]: e.target.value}) 
       
     }
@@ -37,7 +38,7 @@ class BucketListForm extends React.Component{
         return (
             <div className="form-group row">
                <div className="col-sm-10">
-                <h1>BucketList</h1>
+                <h1>Bucket List</h1>
                 <div>
                     {}
                 </div>
@@ -45,7 +46,7 @@ class BucketListForm extends React.Component{
                     <input className = 'form-control'
                         type = 'text'
                         name = 'description'
-                        placeholder = 'description'
+                        placeholder = 'Description'
                         value = {this.state.description}
                         onChange = {this.handleChange} />
 
