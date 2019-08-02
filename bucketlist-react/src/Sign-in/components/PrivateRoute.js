@@ -8,7 +8,6 @@ export default function(props) {
       {...rest}
       render={() => {
         const token = localStorage.getItem('token');
-
         return token ? <Component /> : <Redirect to='/signIn' />;
       }}
     />

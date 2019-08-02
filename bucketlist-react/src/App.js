@@ -11,22 +11,20 @@ function App() {
     <div>
       <nav>
         <span>
-          <Link to = '/BucketList' >Bucket List</Link>
+            <Link to = '/BucketList' >Bucket List</Link>
         </span>
         <span>
-          <Link to = '/SignIn' >Sign In</Link>
+            <Link to = '/SignIn' >Sign In</Link>
         </span>
         <span>
-          <Link to = '/SignUp' >Sign Up</Link>
+            <Link to = '/SignUp' >Sign Up</Link>
         </span>
       </nav>
       
-      <PrivateRoute exact path = '/bucketList' component = {ProtectedPage} />
+    <PrivateRoute exact path = '/bucketList' component = {ProtectedPage} />
 
       <Route exact path = '/signIn' component = {SignInForm} />
       <Route exact path = '/signUp' component = {SignUpForm} />
-
-
     </div>
   );
 }

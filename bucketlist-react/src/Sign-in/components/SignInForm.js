@@ -35,39 +35,33 @@ class SignInForm extends React.Component {
         const { isLoading, error } = this.props
 
         return (
-
             <Row>
                 <Col md={{ span: 4, offset: 4 }}>
-
+            
             <form onSubmit={this.handleSubmit}>
                 {error && <p className="error">{error}</p>}
-
                 <h1>Login</h1>
-
-                    <div className='form-group'>
-                        <input className="form-control"
-                            type="name" 
-                            name="username" 
-                            placeholder="Username" 
-                            value={username} 
-                            onChange={this.handleChange} />
-                    </div>
-                    
-
-                    <div className='form-group'>
-                        <input className="form-control"
-                            type="password" 
-                            name="password" 
-                            placeholder="Password" 
-                            value={password} 
-                            onChange={this.handleChange} />
-                    </div>
-
-                {isLoading 
-                    ? <p>Logging in...</p>
-                    : <button className="btn btn-primary btn-lg" type="submit">Login</button> }
+            <div className='form-group'>
+                <input className="form-control"
+                    type="name" 
+                    name="username" 
+                    placeholder="Username" 
+                    value={username} 
+                    onChange={this.handleChange} />
+            </div>
+            <div className='form-group'>
+                <input className="form-control"
+                    type="password" 
+                    name="password" 
+                    placeholder="Password" 
+                    value={password} 
+                    onChange={this.handleChange} />
+            </div>
+            {isLoading 
+                ? <p>Logging in...</p>
+                 : <button className="btn btn-primary btn-lg" type="submit">Login</button> }
             </form>
-            </Col>
+                </Col>
             </Row>
         )
     }
